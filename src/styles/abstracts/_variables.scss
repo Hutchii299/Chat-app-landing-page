@@ -10,8 +10,8 @@ $color-background: #fafafa;
 $color-grad-magenta: hsl(293, 100%, 63%);
 $color-grad-violet: hsl(264, 100%, 61%);
 
-$color-grad-magenta-light: hsl(293, 100%, 63%, 0.05);
-$color-grad-violet-light: hsl(264, 100%, 61%, 0.05);
+$color-grad-magenta-light: hsla(293, 100%, 63%, 0.05);
+$color-grad-violet-light: hsla(264, 100%, 61%, 0.05);
 
 $iphone-width: 29rem;
 $aspect-ratio-phone: calc(18 / 9);

@@ -1,0 +1,497 @@
+/*
+    BREAKPOINTS:
+    - mobile: 375px
+    - desktop: 1440px
+    - big-screen: 1440px+
+
+$breakpoint arg choices
+- mobile
+- desktop
+- big-screen
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #a39daa;
+  min-height: 100vh;
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #b7b6bb;
+  }
+  25% {
+    background-color: #a8a7ac;
+  }
+  50% {
+    background-color: #7d7c81;
+  }
+  100% {
+    background-color: #b7b6bb;
+  }
+}
+
+main {
+  max-width: 144rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  align-items: center;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 30em) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.background {
+  height: 85vh;
+  position: absolute;
+  width: 50rem;
+}
+.background-left {
+  background-image: linear-gradient(to top right, #8838ff, #e942ff);
+  border-radius: 0 0 80rem 80rem;
+  left: -10rem;
+  top: 0;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 50em) {
+  .background-left {
+    left: -31rem;
+    height: 60%;
+  }
+}
+.background-right {
+  background-image: linear-gradient(
+    to top right,
+    rgba(136, 56, 255, 0.05),
+    rgba(233, 66, 255, 0.05)
+  );
+  border-radius: 80rem 80rem 0 0;
+  right: -15rem;
+  bottom: 0;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 50em) {
+  .background-right {
+    display: none;
+  }
+}
+
+.left {
+  position: relative;
+  z-index: 2;
+  width: 29rem;
+  height: calc(29rem * 2);
+  justify-self: flex-end;
+  margin-right: 9rem;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 50em) {
+  .left {
+    margin-top: 6rem;
+    justify-self: center;
+    margin-right: 0;
+  }
+}
+
+.phone {
+  position: relative;
+  background-color: #fafafa;
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  border: 1.3rem white solid;
+  box-shadow: 0 4rem 5rem -2rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.phone-heading {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 13%;
+  width: inherit;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to right, #8838ff, #e942ff);
+}
+.phone-heading :not(:last-child) {
+  margin-right: 0.6rem;
+}
+.phone-heading-tab {
+  width: 65%;
+  height: 4rem;
+  background-color: white;
+  border-radius: 0 0 1.7rem 1.7rem;
+  position: absolute;
+  top: calc((4rem / 2) * -1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.phone-heading-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: inherit;
+  padding: 0 1.2rem;
+  margin-bottom: 1rem;
+}
+.phone-icon {
+  transform: rotate(90deg);
+  height: 1rem;
+  stroke: white;
+}
+.phone-avatar {
+  height: 3rem;
+  border: 1px white solid;
+  border-radius: 50%;
+}
+.phone-user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.phone-user-details-name {
+  line-height: 1;
+  font-size: 1.5rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0.6rem;
+}
+.phone-user-details-subheading {
+  line-height: 1;
+  color: #d89eff;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.phone__content-container {
+  padding: 1.2rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+}
+.phone__messages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.phone__messages-msg {
+  padding: 0.5rem 0.8rem;
+  max-width: 65%;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.phone__messages-msg-left {
+  border-radius: 1rem 1rem 1rem 0.3rem;
+  align-self: flex-start;
+  color: #9241c8;
+  background-color: #ede5f2;
+}
+.phone__messages-msg-right {
+  border-radius: 1rem 1rem 0.3rem 1rem;
+  align-self: flex-end;
+  color: #6e5d7e;
+  background-color: white;
+  box-shadow: 0 1rem 2rem -0.5rem rgba(0, 0, 0, 0.2);
+}
+.phone__messages-image-container {
+  max-width: 70%;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 1rem;
+  align-self: flex-end;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.phone__messages-image-container-img {
+  width: 100%;
+  border-radius: 1.2rem;
+}
+.phone__messages-pay {
+  display: flex;
+  align-items: center;
+  max-width: 75%;
+  background-image: linear-gradient(to left, #8838ff, #e942ff);
+  padding: 1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.phone__messages-pay :not(:last-child) {
+  margin-right: 1rem;
+}
+.phone__messages-pay__circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px #d89eff solid;
+  border-radius: 50%;
+}
+.phone__messages-pay__text {
+  color: white;
+}
+.phone__messages-pay__money {
+  margin-left: auto;
+  color: white;
+  font-weight: 500;
+}
+.phone__text-input {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}
+.phone__text-input__text {
+  padding: 1.2rem 2.5rem;
+  font-family: inherit;
+  border-radius: 10rem;
+  border: none;
+  width: inherit;
+  background-color: white;
+}
+.phone__text-input__text::placeholder {
+  color: #c6cacd;
+  font-size: 1.2rem;
+}
+.phone__text-input__text:focus {
+  outline: none;
+}
+.phone__text-input__btn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  background-color: #3e2753;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: none;
+  transform: translateY(-50%);
+}
+.phone__text-input-icon {
+  transform: rotate(-90deg);
+  height: 1rem;
+  stroke-width: 2px;
+  stroke: white;
+}
+
+.heading {
+  font-size: 4rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: #3e2753;
+  line-height: 1;
+  margin-bottom: 3rem;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+
+.description {
+  width: 62%;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 50em) {
+  .description {
+    text-align: center;
+    width: 80%;
+  }
+}
+
+.right {
+  position: relative;
+  z-index: 2;
+  justify-self: flex-start;
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+}
+@media only screen and (max-width: 50em) {
+  .right {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 7rem 0 6rem 0;
+  }
+}
+
+.loading-bubble {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 2rem;
+  bottom: 2rem;
+  width: 4rem;
+  padding: 1rem;
+  background-color: #e5e4e9;
+  border-radius: 5rem;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.loading-bubble :not(:last-child) {
+  margin-right: 0.2rem;
+}
+.loading-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -0.1rem;
+  left: -0.1rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: inherit;
+}
+.loading-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem;
+  left: -0.6rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: inherit;
+}
+.loading-bubble__dot {
+  position: relative;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #b7b6bb;
+  z-index: 5;
+}
+.loading-bubble__dot-1 {
+  animation: pulse 1s linear infinite;
+}
+.loading-bubble__dot-2 {
+  animation: pulse 1s linear 0.8s infinite;
+}
+.loading-bubble__dot-3 {
+  animation: pulse 1s linear 1.6s infinite;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #3e2753;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.dots-icon {
+  position: relative;
+  margin-left: auto;
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+.dots-icon::before,
+.dots-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+.dots-icon::before {
+  top: -0.5rem;
+}
+.dots-icon::after {
+  bottom: -0.5rem;
+}
+
+.chevron {
+  border-color: white;
+  border-style: solid;
+  border-width: 0.2rem 0.2rem 0 0;
+  display: inline-block;
+  height: calc(0.2rem * 5);
+  width: calc(0.2rem * 5);
+  transform: rotate(-135deg);
+}
+.chevron-right {
+  transform: translateX(-0.2rem) rotate(45deg);
+}
