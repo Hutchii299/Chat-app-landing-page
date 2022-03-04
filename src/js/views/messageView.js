@@ -7,7 +7,7 @@
 class MessageView {
     _parentElement = document.querySelector('.phone__messages');
     _bubble = document.querySelector('.loading-bubble');
-    _dogImages = ['/src/images/dog-image-1.jpg', '/src/images/dog-image-2.jpg', '/src/images/dog-image-3.jpg'];
+    _dogImages = ['./src/images/dog-image-1.jpg', './src/images/dog-image-2.jpg', './src/images/dog-image-3.jpg'];
     _data;
     _messages;
     _messagesLoaded = 0;
