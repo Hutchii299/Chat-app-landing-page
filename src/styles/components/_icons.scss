@@ -1,0 +1,42 @@
+.dots-icon {
+  position: relative;
+  margin-left: auto;
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 0.3rem;
+    width: 0.3rem;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  &::before {
+    top: -0.5rem;
+  }
+
+  &::after {
+    bottom: -0.5rem;
+  }
+}
+
+.chevron {
+  $border-size-chevron: 0.2rem;
+  border-color: white;
+  border-style: solid;
+  border-width: $border-size-chevron $border-size-chevron 0 0;
+  display: inline-block;
+  height: calc($border-size-chevron * 5);
+  width: calc($border-size-chevron * 5);
+  transform: rotate(-135deg);
+
+  &-right {
+    transform: translateX(-0.2rem) rotate(45deg);
+  }
+}

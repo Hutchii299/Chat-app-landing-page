@@ -1,0 +1,36 @@
+.background {
+  height: 85vh;
+  position: absolute;
+  width: 50rem;
+
+  &-left {
+    background-image: linear-gradient(
+      to top right,
+      $color-grad-violet,
+      $color-grad-magenta
+    );
+    border-radius: 0 0 80rem 80rem;
+    left: -10rem;
+    top: 0;
+
+    @include respond(desktop) {
+      left: -31rem;
+      height: 60%;
+    }
+  }
+
+  &-right {
+    background-image: linear-gradient(
+      to top right,
+      $color-grad-violet-light,
+      $color-grad-magenta-light
+    );
+    border-radius: 80rem 80rem 0 0;
+    right: -15rem;
+    bottom: 0;
+
+    @include respond(desktop) {
+      display: none;
+    }
+  }
+}

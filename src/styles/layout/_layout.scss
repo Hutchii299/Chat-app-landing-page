@@ -1,0 +1,16 @@
+main {
+  max-width: 144rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: $color-background;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  align-items: center;
+
+  @include respond(phone) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}

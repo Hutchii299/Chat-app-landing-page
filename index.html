@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+
+    <title>Frontend Mentor | Chat App</title>
+  </head>
+  <body>
+    <main>
+      <div class="container left">
+        <div class="phone">
+          <heading class="phone-heading">
+            <div class="phone-heading-tab"></div>
+            <div class="phone-heading-container">
+              <div class="chevron"></div>
+              <img
+                class="phone-avatar"
+                src="./src/images/avatar.jpg"
+                alt="avatar"
+              />
+              <div class="phone-user-details">
+                <h2 class="phone-user-details-name">Samuel Green</h2>
+                <h3 class="phone-user-details-subheading">Available to Walk</h3>
+              </div>
+
+              <div class="dots-icon"></div>
+            </div>
+          </heading>
+          <div class="phone__content-container">
+            <div class="phone__messages">
+              <div class="loading-bubble">
+                <div class="loading-bubble__dot loading-bubble__dot-1"></div>
+                <div class="loading-bubble__dot loading-bubble__dot-2"></div>
+                <div class="loading-bubble__dot loading-bubble__dot-3"></div>
+              </div>
+            </div>
+            <form class="phone__text-input">
+              <input
+                type="text"
+                class="phone__text-input__text"
+                placeholder="Type a message..."
+              />
+              <button type="button" class="phone__text-input__btn">
+                <div class="chevron chevron-right"></div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container right">
+        <h1 class="heading">Simple booking</h1>
+        <p class="description">
+          Stay in touch with our dog walkers through the chat interface. This
+          makes it easy to discuss arrangements and make bookings. Once the walk
+          has been completed you can rate your walker and book again all through
+          the chat.
+        </p>
+      </div>
+      <div class="background background-left"></div>
+      <div class="background background-right"></div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/Hutchii299/Chat-app-landing-page.git"
+        >Rhys Hutchinson</a
+      >.
+    </div>
+
+    <script type="module" src="src/js/controller/controller.js"></script>
+  </body>
+</html>

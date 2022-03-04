@@ -1,0 +1,38 @@
+//Media Query Manager
+/*
+    BREAKPOINTS:
+    - mobile: 375px
+    - desktop: 1440px
+    - big-screen: 1440px+
+
+$breakpoint arg choices
+- mobile
+- desktop
+- big-screen
+
+*/
+@mixin respond($breakpoint) {
+  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
+    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
+
+    em is the best option for media queries 1em = 16px
+
+    therefore 600px = (600/16) = 37.5em
+
+    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 30em) {
+      @content;
+    } //<=375 px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 50em) {
+      @content;
+    } //375-1440px
+  }
+  @if $breakpoint == big-screen {
+    @media only screen and (min-width: 90em) {
+      @content;
+    } //>1440px
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "chat-app-css-illustration-master",
+  "version": "1.0.0",
+  "description": "Front end mentor Chat App Project",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Rhys Hutchinson (gitHub: Hutchii299)",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "core-js": "^3.21.1",
+    "parcel": "^2.3.2",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
