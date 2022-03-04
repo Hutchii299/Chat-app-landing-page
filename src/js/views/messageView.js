@@ -1,11 +1,11 @@
-// import image1 from '../../images/dog-image-1.jpg';
-// import image2 from '../../images/dog-image-2.jpg';
-// import image3 from '../../images/dog-image-3.jpg';
+import image1 from '../../images/dog-image-1.jpg';
+import image2 from '../../images/dog-image-2.jpg';
+import image3 from '../../images/dog-image-3.jpg';
 
 class MessageView {
     _parentElement = document.querySelector('.phone__messages');
     _bubble = document.querySelector('.loading-bubble');
-    _dogImages = ['../../src/images/dog-image-1.jpg', '../../src/images/dog-image-2.jpg', '../../src/images/dog-image-3.jpg'];
+    _dogImages = [image1, image2, image3];
     _data;
     _messages;
     _messagesLoaded = 0;
