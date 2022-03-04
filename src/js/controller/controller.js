@@ -8,7 +8,7 @@ import { TIMER_SECONDS } from "../config.js"
 
 //import views
 import messageView from "../views/messageView.js";
-import { async } from 'regenerator-runtime/runtime';
+// import { async } from 'regenerator-runtime/runtime';
 
 
 
