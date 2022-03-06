@@ -1,15 +1,3 @@
-/*
-    BREAKPOINTS:
-    - mobile: 375px
-    - desktop: 1440px
-    - big-screen: 1440px+
-
-$breakpoint arg choices
-- mobile
-- desktop
-- big-screen
-
-*/
 * {
   margin: 0;
   padding: 0;
@@ -61,18 +49,10 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   align-items: center;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 30em) {
   main {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 }
 
@@ -86,14 +66,6 @@ main {
   border-radius: 0 0 80rem 80rem;
   left: -10rem;
   top: 0;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 50em) {
   .background-left {
@@ -110,14 +82,6 @@ main {
   border-radius: 80rem 80rem 0 0;
   right: -15rem;
   bottom: 0;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 50em) {
   .background-right {
@@ -132,14 +96,6 @@ main {
   height: calc(29rem * 2);
   justify-self: flex-end;
   margin-right: 9rem;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 50em) {
   .left {
@@ -340,28 +296,12 @@ main {
   color: #3e2753;
   line-height: 1;
   margin-bottom: 3rem;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 
 .description {
   width: 62%;
   line-height: 1.7;
   font-size: 1.6rem;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 50em) {
   .description {
@@ -374,14 +314,6 @@ main {
   position: relative;
   z-index: 2;
   justify-self: flex-start;
-  /* @content means that you are parsing a code block into this media query to be executed [see _base file]
-    rem and em are not affected by the root font setting (rem an em is affected by the the user browser preference in media queries)
-
-    em is the best option for media queries 1em = 16px
-
-    therefore 600px = (600/16) = 37.5em
-
-    'only screen' basically says that the mixin should only work on screens and not when the page is printed*/
 }
 @media only screen and (max-width: 50em) {
   .right {
@@ -391,6 +323,54 @@ main {
     align-items: center;
     margin: 7rem 0 6rem 0;
   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #3e2753;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.dots-icon {
+  position: relative;
+  margin-left: auto;
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+.dots-icon::before,
+.dots-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 0.3rem;
+  width: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+.dots-icon::before {
+  top: -0.5rem;
+}
+.dots-icon::after {
+  bottom: -0.5rem;
+}
+
+.chevron {
+  border-color: white;
+  border-style: solid;
+  border-width: 0.2rem 0.2rem 0 0;
+  display: inline-block;
+  height: calc(0.2rem * 5);
+  width: calc(0.2rem * 5);
+  transform: rotate(-135deg);
+}
+.chevron-right {
+  transform: translateX(-0.2rem) rotate(45deg);
 }
 
 .loading-bubble {
@@ -446,52 +426,4 @@ main {
 }
 .loading-bubble__dot-3 {
   animation: pulse 1s linear 1.6s infinite;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  color: #3e2753;
-}
-
-.attribution a {
-  color: #3e52a3;
-}
-
-.dots-icon {
-  position: relative;
-  margin-left: auto;
-  height: 0.3rem;
-  width: 0.3rem;
-  background-color: white;
-  border-radius: 50%;
-}
-.dots-icon::before,
-.dots-icon::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  height: 0.3rem;
-  width: 0.3rem;
-  background-color: white;
-  border-radius: 50%;
-}
-.dots-icon::before {
-  top: -0.5rem;
-}
-.dots-icon::after {
-  bottom: -0.5rem;
-}
-
-.chevron {
-  border-color: white;
-  border-style: solid;
-  border-width: 0.2rem 0.2rem 0 0;
-  display: inline-block;
-  height: calc(0.2rem * 5);
-  width: calc(0.2rem * 5);
-  transform: rotate(-135deg);
-}
-.chevron-right {
-  transform: translateX(-0.2rem) rotate(45deg);
 }
