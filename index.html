@@ -26,7 +26,7 @@
     <main>
       <section class="container left">
         <article class="phone">
-          <heading class="phone-heading">
+          <div class="phone-heading">
             <div class="phone-heading-tab"></div>
             <div class="phone-heading-container">
               <div class="chevron"></div>
@@ -42,7 +42,7 @@
 
               <div class="dots-icon"></div>
             </div>
-          </heading>
+          </div>
           <div class="phone__content-container">
             <div class="phone__messages">
               <div class="loading-bubble">
@@ -57,7 +57,11 @@
                 class="phone__text-input__text"
                 placeholder="Type a message..."
               />
-              <button type="button" class="phone__text-input__btn">
+              <button
+                type="button"
+                aria-label="messaging-button"
+                class="phone__text-input__btn"
+              >
                 <div class="chevron chevron-right"></div>
               </button>
             </form>
@@ -89,6 +93,6 @@
       >.
     </footer>
 
-    <script defer type="module" src="src/js/controller/controller.js"></script>
+    <script type="module" src="src/js/controller/controller.js"></script>
   </body>
 </html>
